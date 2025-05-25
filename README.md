@@ -77,3 +77,16 @@ Syntax:
 currency(base, target, amount)
 ```
 Converts  one currency to another.
+Syntax:
+- `base`: string, required
+- `target`: string, required
+- `amount`: integer, required
+---
+```python
+seconds_to_time(seconds)
+```
+Converts given seconds into formatted time (HH\:MM:SS)
+Syntax:
+- `seconds` integer, required
+---
+more docs tomorrow
