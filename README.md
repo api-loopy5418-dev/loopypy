@@ -1,5 +1,9 @@
 # loopypy
 The official Python wrapper for api.loopy5418.dev.
+Install with:
+```bash
+pip install loopypy
+```
 The usage is very human:
 You can do either
 ```python
