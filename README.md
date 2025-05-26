@@ -42,7 +42,7 @@ Sets the API key for later use. Required for most endpoints.
 Syntax:
 - `key`: string, required
 
-Example Usage:
+### Example Usage:
 ```python
 import loopypy
 loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
