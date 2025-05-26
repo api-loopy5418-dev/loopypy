@@ -74,7 +74,7 @@ print(ask.response)
 
 
 <details>
-  <summary>## Function List</summary>
+  <summary><h3>Function List</h3></summary>
 
 |Name|Description|API Key|
 |----|-----------|-------|
@@ -90,3 +90,4 @@ print(ask.response)
 |`ascii_art(text)`|Returns multiline ascii art off of the given text.|Optional|
 |`Coming Soon`|More functions are coming soon.|
  </summary>
+</details>
