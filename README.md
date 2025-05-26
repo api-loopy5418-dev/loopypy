@@ -46,7 +46,7 @@ First install the package with
 pip install loopypy
 ```
 
-The paste this into you app.py (or whatever you call it!)
+Then paste this into you app.py (or whatever you call it!)
 ```python
 import loopypy
 # Or you can just do 
@@ -57,19 +57,18 @@ loopypy.setApiKey("Secret!")
 # https://discord.gg/ZwK2W7GxhA
 
 
-// Open AI
+# Open AI
 ask = loopy.ai("Hello, how are you! What's the weather in New York?")
 print(ask.response)
 
-/* After running check your terminal!
-* It should say something like:
-* "Hello! I'm just a program, so I 
-* don't have feelings, but I'm here to help you. 
-* I don't have real-time data on the weather. 
-* For the most accurate and current weather 
-* information in New York, please check a 
-* reliable weather website or app."
-*/
+# After running check your terminal!
+# It should say something like:
+# "Hello! I'm just a program, so I 
+# don't have feelings, but I'm here to help you. 
+# I don't have real-time data on the weather. 
+# For the most accurate and current weather 
+# information in New York, please check a 
+# reliable weather website or app."
 ```
 
 
