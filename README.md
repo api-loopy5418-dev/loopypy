@@ -89,9 +89,13 @@ print(ask.response)
 |`ascii_art(text)`|Returns multiline ascii art off of the given text.|Optional|
 |`Coming Soon`|More functions are coming soon.|
  </summary>
+</details>
+<details>
 <summary><h3>Function Usages</h3></summary>
 Usages:
+
 ---
+
 ```python
 setApiKey(key)
 ```
