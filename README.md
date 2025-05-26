@@ -35,7 +35,7 @@
 
 ## About
 
-loopy-py is a wrapper for api.loopy5418.dev made in Python.
+loopypy is a wrapper for api.loopy5418.dev made in Python.
 
 It's easy for people that don't know how to make HTTP requests.
 
