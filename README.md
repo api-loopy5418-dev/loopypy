@@ -72,9 +72,7 @@ print(ask.response)
 ```
 
 
-<details>
-  <summary><h3>Function List</h3></summary>
-
+<details><summary><h3>Function List</h3></summary>
 |Name|Description|API Key|
 |----|-----------|-------|
 |`setApiKey(key)`|Sets the API key for automated gathering later on.|x|
@@ -88,13 +86,9 @@ print(ask.response)
 |`pick(*args)`|Picks an option off of the given ones.|Optional|
 |`ascii_art(text)`|Returns multiline ascii art off of the given text.|Optional|
 |`Coming Soon`|More functions are coming soon.|
- </summary>
-</details>
-<details>
-<summary><h3>Function Usages</h3></summary>
-Usages:
+</summary></details>
 
----
+<details><summary><h3>Function Usages</h3></summary>
 
 ```python
 setApiKey(key)
@@ -261,5 +255,4 @@ Generates multiline ascii art.
 import loopypy
 print(loopypy.ascii_art("Hello")) # Prints the multiline ascii text
 ```
-</summary>
-</details>
+</summary></details>
