@@ -1,24 +1,81 @@
-# loopypy
-The official Python wrapper for api.loopy5418.dev.
-Install with:
+<p align="center">
+  <a href="https://api.loopy5418.dev/">
+    <img width="200" src="https://cdn.discordapp.com/icons/1365258638222164008/b0ac96e1df99c594cfd6ccb5d435f618.webp" alt="loopy-ts">
+  </a>
+</p>
+
+<div align="center">
+  <b>The official python wrapper for api.loopy5418.dev.</b>
+</div>
+
+---
+
+<br/>
+
+<div align="center">
+
+[![Loopy Server][loopy-ts-server]][loopy-ts-server-url] &nbsp; &nbsp;
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fapi.loopy5418.dev%2F&label=api.loopy5418.dev) &nbsp; &nbsp;
+
+[loopy-ts-server]: https://img.shields.io/discord/1365258638222164008?color=5865F2&logo=discord&logoColor=white
+
+[loopy-ts-server-url]: https://discord.gg/ZwK2W7GxhA
+
+  </div>
+
+<br />
+
+<div align = "center">
+
+**[ Documentation ](https://api.loopy5418.dev/)** | **[ Support Server ](https://discord.gg/ZwK2W7GxhA)** | **[ PyPi ](https://pypi.org/project/loopypy/)** | **[ GitHub ](https://github.com/api-loopy5418-dev/loopypy)**
+
+</div>
+
+---
+
+## About
+
+loopy-py is a wrapper for api.loopy5418.dev made in Python.
+
+It's easy for people that don't know how to make HTTP requests.
+
+## Setup
+
+First install the package with 
 ```bash
 pip install loopypy
 ```
-The usage is very human:
-You can do either
+
+The paste this into you app.py (or whatever you call it!)
 ```python
 import loopypy
-```
-or
-```python
-from loopypy import setApiKey, ...
-```
-both are supported.
+# Or you can just do 
+# from 'loopypy' import setApiKey, getApiKey, ai
 
-Set your api key using `setApiKey(key)`.
+loopypy.setApiKey("Secret!")
+# You can get your api key at our server
+# https://discord.gg/ZwK2W7GxhA
 
-Function List:
----
+
+// Open AI
+ask = loopy.ai("Hello, how are you! What's the weather in New York?")
+print(ask.response)
+
+/* After running check your terminal!
+* It should say something like:
+* "Hello! I'm just a program, so I 
+* don't have feelings, but I'm here to help you. 
+* I don't have real-time data on the weather. 
+* For the most accurate and current weather 
+* information in New York, please check a 
+* reliable weather website or app."
+*/
+```
+
+
+<details>
+  <summary>## Function List</summary>
+
 |Name|Description|API Key|
 |----|-----------|-------|
 |`setApiKey(key)`|Sets the API key for automated gathering later on.|x|
@@ -32,160 +89,4 @@ Function List:
 |`pick(*args)`|Picks an option off of the given ones.|Optional|
 |`ascii_art(text)`|Returns multiline ascii art off of the given text.|Optional|
 |`Coming Soon`|More functions are coming soon.|
-
-Usages:
----
-```python
-setApiKey(key)
-```
-Sets the API key for later use. Required for most endpoints.
-Syntax:
-- `key`: string, required
-
-**Example Usage:**
-```python
-import loopypy
-loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
-print(loopypy.getApiKey()) # Prints the key you set
-```
----
-```python
-getApiKey()
-```
-Retrieves and returns the current API key.
-
-**Example Usage:**
-```python
-import loopypy
-loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
-print(loopypy.getApiKey()) # Prints the key you set
-```
----
-```python
-ai(prompt, speed)
-```
-Uses the /openai/text endpoint to generate text from ChatGPT.
-Syntax:
-- `prompt`: String, required
-- `speed`: Integer, optional, defaults to 1. (0: large, 1: balanced, 2: fast)
-Children:
-- `.response`
-- `.model`
-- `.prompt`
-- `.success`
-
-**Example Usage:**
-```python
-import loopypy
-loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
-ask = loopypy.ai("What's the capital of France?")
-print(f"Response: {ask.response}")
-print(f"Model: {ask.model}")
-```
----
-```python
-owoify(text)
-```
-Owoifies the text and returns it.
-Syntax:
-- `text`: string, required
-
-**Example Usage:**
-```python
-import loopypy
-print(loopypy.owoify("Hello!"))
-```
----
-```python
-emojify(text)
-```
-Turns the text into regional indicators in Discord format.
-Syntax:
-- `text` string, required
-
-**Example Usage:**
-```python
-import loopypy
-print(loopypy.emojify("Hello")) # Prints the key you set
-```
----
-```python
-qr(data)
-```
-Turns the given data into a QR code and returns the image buffer.
-Syntax:
-- `data`: string, required
-
-**Example Usage:**
-```python
-import loopypy
-loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
-buffer = loopypy.qr("Hello!") # get image buffer
-with open("image.png", "wb") as f:
-    f.write(buffer)
-    print("QR Code image saved to file!")
-```
----
-```python
-currency(base, target, amount)
-```
-Converts  one currency to another.
-Syntax:
-- `base`: string, required
-- `target`: string, required
-- `amount`: integer, required
-Children:
-- `.rate`
-- `.converted`
-- `.success`
-
-**Example Usage:**
-```python
-import loopypy
-loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
-cur = loopypy.currency("USD", "EUR", 1)
-print(f"Converted Money: {cur.converted}")
-print(f"Rate: {cur.rate}")
-```
----
-```python
-seconds_to_time(seconds)
-```
--# This function will soon be changed to fit the children system. E.g. print(seconds_to_time.seconds)
-Converts given seconds into formatted time (HH\:MM:SS)
-Syntax:
-- `seconds` integer, required
-
-**Example Usage:**
-```python
-import loopypy
-seconds = 260 # is 4 minutes and 20 seconds
-print(loopypy.seconds_to_time(seconds)) # prints 00:04:20
-```
----
-```python
-pick(*args)
-```
-Picks one of the given options.
-Syntax:
-- `args`: multiple objects, required
-
-**Example Usage:**
-```python
-import loopypy
-print(loopypy.pick("Hello", "Hi", 1, 5)) # Outputs one of the options.
-```
----
-```python
-ascii_art(text)
-```
-Generates multiline ascii art.
-Syntax:
-- `text`: string, required
-
-**Example Usage:**
-```python
-import loopypy
-print(loopypy.ascii_art("Hello")) # Prints the multiline ascii text
-```
----
+ </summary>
