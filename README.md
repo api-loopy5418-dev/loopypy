@@ -73,6 +73,7 @@ print(ask.response)
 
 
 <details><summary><h3>Function List</h3></summary>
+  
 |Name|Description|API Key|
 |----|-----------|-------|
 |`setApiKey(key)`|Sets the API key for automated gathering later on.|x|
