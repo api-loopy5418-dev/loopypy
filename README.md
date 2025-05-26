@@ -41,6 +41,7 @@ setApiKey(key)
 Sets the API key for later use. Required for most endpoints.
 Syntax:
 - `key`: string, required
+
 Example Usage:
 ```python
 import loopypy
