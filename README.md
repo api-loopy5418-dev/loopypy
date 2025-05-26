@@ -42,7 +42,7 @@ Sets the API key for later use. Required for most endpoints.
 Syntax:
 - `key`: string, required
 
-## Example Usage:
+**Example Usage:**
 ```python
 import loopypy
 loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
@@ -53,7 +53,8 @@ print(loopypy.getApiKey()) # Prints the key you set
 getApiKey()
 ```
 Retrieves and returns the current API key.
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
@@ -72,7 +73,8 @@ Children:
 - `.model`
 - `.prompt`
 - `.success`
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
@@ -87,7 +89,8 @@ owoify(text)
 Owoifies the text and returns it.
 Syntax:
 - `text`: string, required
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 print(loopypy.owoify("Hello!"))
@@ -99,7 +102,8 @@ emojify(text)
 Turns the text into regional indicators in Discord format.
 Syntax:
 - `text` string, required
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 print(loopypy.emojify("Hello")) # Prints the key you set
@@ -111,7 +115,8 @@ qr(data)
 Turns the given data into a QR code and returns the image buffer.
 Syntax:
 - `data`: string, required
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
@@ -133,7 +138,8 @@ Children:
 - `.rate`
 - `.converted`
 - `.success`
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 loopypy.setApiKey("xxxxx-xxxxxx-xxxxx-xxxxx")
@@ -149,7 +155,8 @@ seconds_to_time(seconds)
 Converts given seconds into formatted time (HH\:MM:SS)
 Syntax:
 - `seconds` integer, required
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 seconds = 260 # is 4 minutes and 20 seconds
@@ -162,7 +169,8 @@ pick(*args)
 Picks one of the given options.
 Syntax:
 - `args`: multiple objects, required
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 print(loopypy.pick("Hello", "Hi", 1, 5)) # Outputs one of the options.
@@ -174,7 +182,8 @@ ascii_art(text)
 Generates multiline ascii art.
 Syntax:
 - `text`: string, required
-Example Usage:
+
+**Example Usage:**
 ```python
 import loopypy
 print(loopypy.ascii_art("Hello")) # Prints the multiline ascii text
