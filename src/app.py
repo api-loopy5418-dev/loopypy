@@ -58,7 +58,7 @@ def owoify(text):
     if not text or not isinstance(text, str):
         raise ValueError("Expected string/int in owoify!")
     try:
-        response = requests.get(f"https://api.loopy5418.dev/owoify?text={quote(text, safe="")}")
+        response = requests.get(f"https://api.loopy5418.dev/owoify?text={quote(text, safe='')}")
         response.raise_for_status()
         return response.json().get("result")
     except requests.exceptions.RequestException as e:
@@ -68,7 +68,7 @@ def emojify(text: str):
     if not text or not isinstance(text, str):
         raise ValueError("Expected string/int in emojify!")
     try:
-        response = requests.get(f"https://api.loopy5418.dev/emojify?text={quote(text, safe="")}")
+        response = requests.get(f"https://api.loopy5418.dev/emojify?text={quote(text, safe='')}")
         response.raise_for_status()
         return response.json().get("result")
     except requests.exceptions.RequestException as e:
@@ -80,7 +80,7 @@ def qr(data: str):
     if not data or not isinstance(data, str):
         raise ValueError("Expected data in qr(data) to be a string!")
     try:
-        response = requests.get(f"https://api.loopy5418.dev/qr?data={quote(data, safe="")}&key={API_KEY}")
+        response = requests.get(f"https://api.loopy5418.dev/qr?data={quote(data, safe='')}&key={API_KEY}")
         response.raise_for_status()
         return response.content
     except requests.exceptions.RequestException or TypeError as e:
@@ -103,7 +103,7 @@ def currency(base: str, target: str, amount: int):
         raise ValueError("Expected 'amount' at the first position in currency to be an integer.")
     if not API_KEY:
         raise ValueError("API Key not set yet. Set it with setApiKey(key: str)")
-    url = f"https://api.loopy5418.dev/currency-converter?base={quote(base, safe="")}&target={quote(target, safe="")}&amount={quote(str(amount), safe="")}&key={API_KEY}"
+    url = f"https://api.loopy5418.dev/currency-converter?base={quote(base, safe='')}&target={quote(target, safe='')}&amount={quote(str(amount), safe='')}&key={API_KEY}"
     try:
         r = requests.get(url, timeout=5)
         r.raise_for_status()
@@ -122,7 +122,7 @@ def seconds_to_time(seconds: int):
     if not seconds or not isinstance(seconds, int):
         raise ValueError("Expected 'seconds' to be integer at first position in seconds_to_time")
     try:
-        response = requests.get(f"https://api.loopy5418.dev/seconds-to-time?seconds={quote(str(seconds), safe="")}")
+        response = requests.get(f"https://api.loopy5418.dev/seconds-to-time?seconds={quote(str(seconds), safe='')}")
         response.raise_for_status()
         return response.json().get("formatted_time")
     except requests.exceptions.RequestException or TypeError as e:
@@ -132,7 +132,7 @@ def pick(*args):
     if not args:
         raise ValueError("Expected 'args' at first position in pick")
     try:
-        response = requests.get(f"https://api.loopy5418.dev/choose?options={quote(','.join(str(arg) for arg in args), safe="")}")
+        response = requests.get(f"https://api.loopy5418.dev/choose?options={quote(','.join(str(arg) for arg in args), safe='')}")
         response.raise_for_status()
         return response.json().get("result")
     except requests.exceptions.RequestException or TypeError as e:
@@ -142,7 +142,7 @@ def ascii_art(text: str):
     if not text or not isinstance(text, str):
         raise ValueError("Expected 'text' as string at first position in ascii_art")
     try:
-        response = requests.get(f"https://api.loopy5418.dev/ascii-art?text={quote(text, safe="")}")
+        response = requests.get(f"https://api.loopy5418.dev/ascii-art?text={quote(text, safe='')}")
         response.raise_for_status()
         return response.json().get("ascii_art")
     except requests.exceptions.RequestException or TypeError as e:
