@@ -14,7 +14,7 @@
 
 <div align="center">
 
-[![Discord Server][loopypy-server][loopypy-server-url] &nbsp; &nbsp;
+[![Discord Server][loopypy-server]][loopypy-server-url] &nbsp; &nbsp;
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fapi.loopy5418.dev%2F&label=api.loopy5418.dev) &nbsp; &nbsp;
 
 [loopypy-server]: https://img.shields.io/discord/1365258638222164008?color=5865F2&logo=discord&logoColor=white
