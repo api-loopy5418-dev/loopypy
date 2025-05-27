@@ -1,11 +1,11 @@
 <p align="center">
   <a href="https://api.loopy5418.dev/">
-    <img width="200" src="https://cdn.discordapp.com/icons/1365258638222164008/b0ac96e1df99c594cfd6ccb5d435f618.webp" alt="loopy-ts">
+    <img width="200" src="https://i.postimg.cc/sXxL02Y1/android-chrome-512x512.png" alt="loopy-ts">
   </a>
 </p>
 
 <div align="center">
-  <b>The official python wrapper for api.loopy5418.dev.</b>
+  <b>The official Python wrapper for api.loopy5418.dev.</b>
 </div>
 
 ---
@@ -14,12 +14,12 @@
 
 <div align="center">
 
-[![Loopy Server][loopy-ts-server]][loopy-ts-server-url] &nbsp; &nbsp;
+[![Discord Server][loopypy-server][loopypy-server-url] &nbsp; &nbsp;
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fapi.loopy5418.dev%2F&label=api.loopy5418.dev) &nbsp; &nbsp;
 
-[loopy-ts-server]: https://img.shields.io/discord/1365258638222164008?color=5865F2&logo=discord&logoColor=white
+[loopypy-server]: https://img.shields.io/discord/1365258638222164008?color=5865F2&logo=discord&logoColor=white
 
-[loopy-ts-server-url]: https://discord.gg/ZwK2W7GxhA
+[loopypy-server-url]: https://api.loopy5418.dev/support
 
   </div>
 
@@ -27,7 +27,7 @@
 
 <div align = "center">
 
-**[ Documentation ](https://api.loopy5418.dev/)** | **[ Support Server ](https://discord.gg/ZwK2W7GxhA)** | **[ PyPi ](https://pypi.org/project/loopypy/)** | **[ GitHub ](https://github.com/api-loopy5418-dev/loopypy)**
+**[ Documentation ](https://api.loopy5418.dev/)** | **[ Support Server ](https://api.loopy5418.dev/support)** | **[ PyPi ](https://pypi.org/project/loopypy/)** | **[ GitHub ](https://github.com/api-loopy5418-dev/loopypy)**
 
 </div>
 
