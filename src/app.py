@@ -19,7 +19,6 @@ def setApiKey(apiKey: str):
     API_KEY = apiKey
 
 def getApiKey():
-    global API_KEY
     if API_KEY is None:
         raise ValueError("API Key not set yet. Set it with setApiKey(key: str)")
     return API_KEY
@@ -32,7 +31,6 @@ class airesp:
         self.prompt = data.get("prompt", "")
 
 def ai(prompt: str, speed=1):
-    global API_KEY
     smap = {0: "large", 1: "balanced", 2: "fast"}
     if not API_KEY:
         raise ValueError("API Key not set yet. Set it with setApiKey(key: str)")
