@@ -18,7 +18,7 @@ def setApiKey(apiKey: str):
         raise ValueError("Expected string in setApiKey")
     check = requests.get(f"https://api.loopy5418.dev/check-api-key?key={apiKey}")
     if not check.json().exists:
-        raise valueError("Invalid API key in setApiKey")
+        raise ValueError("Invalid API key in setApiKey")
     API_KEY = apiKey
 
 def getApiKey():
