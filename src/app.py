@@ -16,6 +16,9 @@ def setApiKey(apiKey: str):
     global API_KEY
     if not apiKey or not isinstance(apiKey, str):
         raise ValueError("Expected string in setApiKey")
+    check = requests.get(f"https://api.loopy5418.dev/check-api-key?key={apiKey}")
+    if not check.json().exists:
+        raise valueError("Invalid API key in setApiKey")
     API_KEY = apiKey
 
 def getApiKey():
@@ -148,3 +151,4 @@ def ascii_art(text: str):
         return response.json().get("ascii_art")
     except requests.exceptions.RequestException as e:
         return f"Error in ascii_art: {e}"
+
