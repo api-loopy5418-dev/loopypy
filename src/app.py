@@ -38,9 +38,11 @@ def ai(prompt: str, speed=1):
         raise ValueError("Expected string at position 1 in ai(prompt, speed)")
     if speed not in smap:
         raise ValueError("Invalid speed option! Please pick 0 (large), 1 (balanced, default) or 2 (fast)")
-    url = f"https://api.loopy5418.dev/openai/text?prompt={requests.utils.quote(prompt)}&speed={smap[speed]}&key={API_KEY}"
+    url = "https://api.loopy5418.dev/openai/text"
+    json = {"prompt": prompt,"speed":smap[speed]}
+    headers = {"api-key": API_KEY}
     try:
-        r = requests.get(url, timeout=40)
+        r = requests.post(url, headers=headers, timeout=40, json=json)
         r.raise_for_status()
         data = r.json()
         return airesp(data)
@@ -77,13 +79,13 @@ def qr(data: str):
         raise ValueError("API Key not set yet. Set it with setApiKey(key: str)")
     if not data or not isinstance(data, str):
         raise ValueError("Expected data in qr(data) to be a string!")
+    headers = {"api-key": API_KEY}
     try:
-        response = requests.get(f"https://api.loopy5418.dev/qr?data={quote(data, safe='')}&key={API_KEY}")
+        response = requests.get(f"https://api.loopy5418.dev/qr?data={quote(data, safe='')}", headers=headers)
         response.raise_for_status()
         return response.content
-    except requests.exceptions.RequestException or TypeError as e:
+    except requests.exceptions.RequestException as e:
         return f"Error in qr: {e}"
-
 
 class currencyinfo:
     def __init__(self, data):
@@ -101,9 +103,10 @@ def currency(base: str, target: str, amount: int):
         raise ValueError("Expected 'amount' at the first position in currency to be an integer.")
     if not API_KEY:
         raise ValueError("API Key not set yet. Set it with setApiKey(key: str)")
-    url = f"https://api.loopy5418.dev/currency-converter?base={quote(base, safe='')}&target={quote(target, safe='')}&amount={quote(str(amount), safe='')}&key={API_KEY}"
+    url = f"https://api.loopy5418.dev/currency-converter?base={quote(base)}&target={quote(target)}&amount={quote(str(amount))}"
+    headers = {"api-key": API_KEY}
     try:
-        r = requests.get(url, timeout=5)
+        r = requests.get(url, headers=headers, timeout=5)
         r.raise_for_status()
         data = r.json()
         return currencyinfo(data)
@@ -123,7 +126,7 @@ def seconds_to_time(seconds: int):
         response = requests.get(f"https://api.loopy5418.dev/seconds-to-time?seconds={quote(str(seconds), safe='')}")
         response.raise_for_status()
         return response.json().get("formatted_time")
-    except requests.exceptions.RequestException or TypeError as e:
+    except requests.exceptions.RequestException as e:
         return f"Error in seconds_to_time: {e}"
 
 def pick(*args):
@@ -133,7 +136,7 @@ def pick(*args):
         response = requests.get(f"https://api.loopy5418.dev/choose?options={quote(','.join(str(arg) for arg in args), safe='')}")
         response.raise_for_status()
         return response.json().get("result")
-    except requests.exceptions.RequestException or TypeError as e:
+    except requests.exceptions.RequestException as e:
         return f"Error in pick: {e}"
 
 def ascii_art(text: str):
@@ -143,5 +146,5 @@ def ascii_art(text: str):
         response = requests.get(f"https://api.loopy5418.dev/ascii-art?text={quote(text, safe='')}")
         response.raise_for_status()
         return response.json().get("ascii_art")
-    except requests.exceptions.RequestException or TypeError as e:
+    except requests.exceptions.RequestException as e:
         return f"Error in ascii_art: {e}"
