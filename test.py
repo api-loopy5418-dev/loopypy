@@ -7,7 +7,7 @@ from unittest.mock import patch, MagicMock
 def setup_api_key():
     loopypy.setApiKey("dummy_key")
     yield
-    loopypy.setApiKey(os.environ.get("TESTPY_API_KEY")
+    loopypy.setApiKey(os.environ.get("TESTPY_API_KEY"))
 
 def test_check_status_ok():
     with patch("loopypy.requests.get") as mock_get:
