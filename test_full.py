@@ -5,7 +5,15 @@ from unittest.mock import patch, MagicMock
 
 @pytest.fixture(autouse=True)
 def setup_api_key():
-    loopypy.setApiKey("dummy_key")
+    with patch("src.app.requests.get") as mock_get:
+        mock_resp = MagicMock()
+        mock_resp.json.return_value = {
+            "exists": True,
+            "success": True
+        }
+        mock_resp.raise_for_status = lambda: None
+        mock_get.return_value = mock_resp
+        loopypy.setApiKey("dummy_key")
 
 def test_check_status_ok():
     with patch("src.app.requests.get") as mock_get:
