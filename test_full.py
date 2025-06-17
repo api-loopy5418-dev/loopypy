@@ -10,7 +10,7 @@ def setup_api_key():
     loopypy.setApiKey(os.environ.get("TESTPY_API_KEY"))
 
 def test_check_status_ok():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.status_code = 200
         mock_resp.text = "OK"
@@ -18,7 +18,7 @@ def test_check_status_ok():
         assert loopypy.checkStatus() is True
 
 def test_check_status_fail():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.status_code = 500
         mock_resp.text = "bad"
@@ -29,7 +29,7 @@ def test_set_get_api_key():
     assert loopypy.getApiKey() == os.environ.get("TESTPY_API_KEY")
 
 def test_ai_success():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
             "success": True,
@@ -44,7 +44,7 @@ def test_ai_success():
         assert resp.response == "Hello!"
 
 def test_qr_success():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.content = b"qrdata"
         mock_resp.raise_for_status = lambda: None
@@ -53,7 +53,7 @@ def test_qr_success():
         assert resp == b"qrdata"
 
 def test_currency_success():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.json.return_value = {
             "rate": "1.2",
@@ -68,7 +68,7 @@ def test_currency_success():
         assert res.converted == "120"
 
 def test_seconds_to_time_success():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.json.return_value = {"formatted_time": "1h 2m 3s"}
         mock_resp.raise_for_status = lambda: None
@@ -77,7 +77,7 @@ def test_seconds_to_time_success():
         assert res == "1h 2m 3s"
 
 def test_pick_success():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.json.return_value = {"result": "A"}
         mock_resp.raise_for_status = lambda: None
@@ -86,7 +86,7 @@ def test_pick_success():
         assert res == "A"
 
 def test_ascii_art_success():
-    with patch("loopypy.requests.get") as mock_get:
+    with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
         mock_resp.json.return_value = {"ascii_art": "ascii"}
         mock_resp.raise_for_status = lambda: None
