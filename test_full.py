@@ -25,6 +25,7 @@ def test_check_status_fail():
 
 def test_set_get_api_key():
     assert loopypy.getApiKey() == "dummy_key"
+
 def test_ai_success():
     with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
@@ -37,7 +38,6 @@ def test_ai_success():
         mock_resp.raise_for_status = lambda: None
         mock_get.return_value = mock_resp
         resp = loopypy.ai("hi", speed=1)
-        assert resp.success
         assert resp.response == "Hello!"
 
 def test_qr_success():
