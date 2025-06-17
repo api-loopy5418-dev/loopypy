@@ -24,8 +24,7 @@ def test_check_status_fail():
         assert loopypy.checkStatus() is False
 
 def test_set_get_api_key():
-    assert loopypy.getApiKey() == os.environ.get("TESTPY_API_KEY")
-
+    assert loopypy.getApiKey() == "dummy_key"
 def test_ai_success():
     with patch("src.app.requests.get") as mock_get:
         mock_resp = MagicMock()
