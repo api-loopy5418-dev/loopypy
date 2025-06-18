@@ -1,5 +1,5 @@
 import pytest
-import src.app as loopypy
+import src.loopypy.app as loopypy
 import os
 from unittest.mock import patch, MagicMock
 
